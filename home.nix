@@ -9,6 +9,6 @@
     homeDirectory = "/home/rub";
 
     # Don't ever change this after the first build.  Don't ask questions.
-    stateVersion = "24.11";
+    stateVersion = "23.11";
   };
 }
