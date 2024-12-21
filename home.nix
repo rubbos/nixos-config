@@ -8,16 +8,19 @@
 	wezterm
 	neovim
 	git
+	lazygit
 	neofetch
 	wget
 	wofi
 	waybar
 	hyprpaper
 	font-awesome
-	mangohud 
 	protonup
 	librewolf
 	gnumake
+	ripgrep
+	fd
+	fzf
     ];
 
     username = "rub";
