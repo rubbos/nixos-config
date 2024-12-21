@@ -4,7 +4,10 @@ let
   dotfilesDir = "${config.home.homeDirectory}/dotfiles";
 in  
 {  
-    #Sourcing dotfiles for nvim
+    # Don't ever change this after the first build.  Don't ask questions.
+    stateVersion = "24.11";
+    
+    # Sourcing dotfiles for nvim
     home.file."${config.home.homeDirectory}/.config/nvim".source = "${dotfilesDir}/nvim";
 
     home.packages = with pkgs; [
@@ -30,9 +33,7 @@ in
 	stow
     ];
 
+    # User settings
     username = "rub";
     homeDirectory = "/home/rub";
-
-    # Don't ever change this after the first build.  Don't ask questions.
-    stateVersion = "24.11";
 }
