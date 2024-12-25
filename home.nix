@@ -32,7 +32,7 @@
   };
 
   home.file.".tmux.conf".source = config.lib.file.mkOutOfStoreSymlink 
-    "${config.home.homeDirectory}/dotfiles/.tmux.conf";
+    "${config.home.homeDirectory}/nixos-config/dotfiles/.tmux.conf";
 
   programs.tmux = {
     enable = true;
@@ -45,5 +45,5 @@
   };
 
   home.file.".config/nvim".source = config.lib.file.mkOutOfStoreSymlink 
-    "${config.home.homeDirectory}/dotfiles/.config/nvim";
+    "${config.home.homeDirectory}/nixos-config/dotfiles/.config/nvim";
 }
