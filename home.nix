@@ -45,7 +45,8 @@ programs.wezterm = {
       end
 
       config.enable_kitty_graphics = true
-      config.enable_wayland = true
+      config.enable_wayland = false
+      config.front_end = "WebGpu"
       config.use_ime = true
       config.enable_tab_bar = false
       config.color_scheme = 'Dracula'
