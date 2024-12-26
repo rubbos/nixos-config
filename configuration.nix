@@ -100,6 +100,15 @@
     ];
   };
 
+  # Launch tmux on startup term
+  programs.bash = {
+    initExtra = ''
+      if command -v tmux &>/dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+        exec tmux
+      fi
+    '';
+  };
+
   programs.firefox.enable = true;
   programs.steam.enable = true;
   programs.steam.gamescopeSession.enable = true;
@@ -119,6 +128,7 @@
      gcc
      rustc
      python313
+     tmux
      discord
      spotify
      docker
