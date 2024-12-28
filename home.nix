@@ -5,6 +5,9 @@
     homeDirectory = "/home/rub";
     packages = with pkgs; [
         home-manager
+        nodejs_23
+        python313
+        unzip
         kitty
         wezterm
         neovim
