@@ -128,7 +128,9 @@
      gcc
      rustc
      python313
+     git
      tmux
+     vim
      discord
      spotify
      docker

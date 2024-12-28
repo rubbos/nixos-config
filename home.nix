@@ -5,14 +5,12 @@
     homeDirectory = "/home/rub";
     packages = with pkgs; [
         home-manager
-        vim
         kitty
         wezterm
         neovim
-        git
         lazygit
         neofetch
-	pfetch-rs
+        pfetch-rs
         wget
         wofi
         waybar
@@ -25,11 +23,15 @@
         fd
         fzf
         stow
+        zoxide
     ];
     # Don't change this after the first build
     stateVersion = "24.11";
   };
-  
+
+programs.git = {
+    enable = true;
+};
 programs.wezterm = {
     enable = true;
     enableBashIntegration = true;
@@ -42,6 +44,8 @@ programs.wezterm = {
       if wezterm.config_builder then
         config = wezterm.config_builder()
       end
+      
+      config.default_prog = { '/run/current-system/sw/bin/bash', '-c', 'tmux attach || tmux new-session' }
 
       config.enable_kitty_graphics = true
       config.enable_wayland = false
