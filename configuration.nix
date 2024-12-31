@@ -134,6 +134,7 @@
      discord
      spotify
      docker
+     obsidian
      wl-clipboard
   ];
 

@@ -27,11 +27,12 @@
         fzf
         stow
         zoxide
+        syncthing
+        ani-cli
     ];
     # Don't change this after the first build
     stateVersion = "24.11";
   };
-
 programs.git = {
     enable = true;
 };
@@ -92,4 +93,6 @@ programs.wezterm = {
 
   home.file.".config/nvim".source = config.lib.file.mkOutOfStoreSymlink 
     "${config.home.homeDirectory}/nixos-config/dotfiles/.config/nvim";
+
+
 }
