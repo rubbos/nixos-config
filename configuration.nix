@@ -136,6 +136,7 @@
      docker
      obsidian
      wl-clipboard
+     brlaser
   ];
 
   environment.sessionVariables = {
