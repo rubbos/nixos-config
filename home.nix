@@ -1,5 +1,7 @@
 { config, lib, pkgs, ... }:
 {
+  nixpkgs.config.allowUnfree = true;
+
   home = {
     username = "rub";
     homeDirectory = "/home/rub";
@@ -29,6 +31,7 @@
         zoxide
         syncthing
         ani-cli
+	obsidian
     ];
     # Don't change this after the first build
     stateVersion = "24.11";

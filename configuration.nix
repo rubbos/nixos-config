@@ -58,7 +58,7 @@
 
   # Enable the GNOME Desktop Environment.
   services.displayManager.sddm.enable = true;
-  services.desktopManager.plasma6.enable = true;
+  services.desktopManager.plasma6.enable = true;  
 
   programs.hyprland.enable = true; # enable Hyprland
 
@@ -137,6 +137,7 @@
      obsidian
      wl-clipboard
      brlaser
+     gutenprint
   ];
 
   environment.sessionVariables = {
