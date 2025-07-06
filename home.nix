@@ -32,6 +32,7 @@
         syncthing
         ani-cli
         obsidian
+        blueman
     ];
     # Don't change this after the first build
     stateVersion = "24.11";
