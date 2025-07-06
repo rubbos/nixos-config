@@ -60,7 +60,6 @@
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;  
   programs.hyprland.enable = true; 
-  services.displayManager.defaultSession = "hyprland"
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -70,6 +69,9 @@
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
+
+  # Enable bluetooth for hyprland
+  services.blueman.enable = true;
 
   # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;
@@ -135,8 +137,9 @@
      spotify
      docker
      wl-clipboard
-     brlaser
-     gutenprint
+     blueman
+     bluez
+     bluez-tools
   ];
 
   environment.sessionVariables = {
