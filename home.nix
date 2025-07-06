@@ -38,7 +38,7 @@
   };
 
   # Use declarative config file for Hyprland
-  xdg.configFile."hypr/hyprland.conf".source = .dotfiles/hyprland.conf;
+  xdg.configFile."hypr/hyprland.conf".source = ./dotfiles/hyprland.conf;
 
   programs.git = {
       enable = true;
