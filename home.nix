@@ -37,8 +37,8 @@
     stateVersion = "24.11";
   };
 
-  # Use declarative config file for Hyprland
-  xdg.configFile."hypr/hyprland.conf".source = ./dotfiles/hyprland.conf;
+  # Hyprland folder 
+  xdg.configDir."hypr" = ./dotfiles/hypr;
 
   programs.git = {
       enable = true;
