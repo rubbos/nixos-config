@@ -56,11 +56,11 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
-  # Enable the GNOME Desktop Environment.
+  # Enable plasma6 and hyprland as default
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;  
-
-  programs.hyprland.enable = true; # enable Hyprland
+  programs.hyprland.enable = true; 
+  services.displayManager.defaultSession = "hyprland"
 
   # Configure keymap in X11
   services.xserver.xkb = {
