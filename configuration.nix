@@ -34,6 +34,7 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
+  services.network-manager-applet.enable = true;
 
   # Set your time zone.
   time.timeZone = "Europe/Amsterdam";
@@ -54,18 +55,12 @@
   };
 
   # Enable the X11 windowing system.
-  services.xserver.enable = true;
+  services.xserver.enable = false;
 
   # Enable plasma6 and hyprland as default
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;  
   programs.hyprland.enable = true; 
-
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
-  };
 
   # Enable CUPS to print documents.
   services.printing.enable = true;

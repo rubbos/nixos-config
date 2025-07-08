@@ -33,6 +33,7 @@
         ani-cli
         obsidian
         blueman
+        swww
     ];
     # Don't change this after the first build
     stateVersion = "24.11";
