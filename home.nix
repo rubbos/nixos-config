@@ -34,6 +34,7 @@
         obsidian
         blueman
         swww
+        eww
     ];
     # Don't change this after the first build
     stateVersion = "24.11";
@@ -68,5 +69,9 @@
   home.file.".config/nvim".source = config.lib.file.mkOutOfStoreSymlink 
     "${config.home.homeDirectory}/nixos-config/dotfiles/.config/nvim";
 
-
+  programs.eww = {
+    enable = true;
+    config = builtins.readFile ./dotfiles/hypr/eww/bar/eww.yuck;
+    style = builtins.readFile ./dotfiles/hypr/eww/bar/eww.scss;
+  };
 }
