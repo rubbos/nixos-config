@@ -69,10 +69,7 @@
   home.file.".config/nvim".source = config.lib.file.mkOutOfStoreSymlink 
     "${config.home.homeDirectory}/nixos-config/dotfiles/.config/nvim";
 
-  {
-    programs.eww.enable = true;
-  }
-
+  programs.eww.enable = true;
   home.file.".config/eww/eww.yuck".source = .dotfiles/hypr/eww/bar/eww.yuck;
   home.file.".config/eww/eww.scss".source = .dotfiles/hypr/eww/bar/eww.scss;
   home.file.".config/eww/scripts".source = .dotfiles/hypr/eww/bar/scripts;
