@@ -64,7 +64,6 @@
   ".config/waybar/scripts".source = ./dotfiles/waybar/scripts;
   ".config/waybar/assets".source = ./dotfiles/waybar/assets;
   ".config/waybar/themes".source = ./dotfiles/waybar/themes;
-  ".config/wal".source = ./dotfiles/wal;
   ".config/hypr/wallpaper.sh".source = ./dotfiles/hypr/wallpaper.sh;
   ".config/wofi".source = ./dotfiles/wofi;
 
