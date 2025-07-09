@@ -38,7 +38,6 @@
         pywal
         bluez
         networkmanager
-        swaync
         yay
     ];
     # Don't change this after the first build
