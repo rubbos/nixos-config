@@ -38,7 +38,6 @@
         pywal
         bluez
         networkmanager
-        yay
     ];
     # Don't change this after the first build
     stateVersion = "24.11";
@@ -47,9 +46,27 @@
   # Hyprland config directory
   home.file.".config/hypr/hyprland.conf".source = ./dotfiles/hypr/hyprland.conf;
 
+  home.file.".config/waybar/config".source = ./dotfiles/waybar/config;
+  home.file.".config/waybar/style.css".source = ./dotfiles/waybar/style.css;
+
+  home.directory.".config/waybar/scripts" = {
+    source = ./dotfiles/waybar/scripts;
+  };
+
+  home.directory.".config/waybar/assets" = {
+    source = ./dotfiles/waybar/assets;
+  };
+
+  home.directory.".config/waybar/themes" = {
+    source = ./dotfiles/waybar/themes;
+  };
+
+  programs.waybar.enable = true;
+
   programs.git = {
       enable = true;
   };
+
   programs.wezterm = {
       enable = true;
       enableBashIntegration = true;
@@ -72,5 +89,11 @@
 
   home.file.".config/nvim".source = config.lib.file.mkOutOfStoreSymlink 
     "${config.home.homeDirectory}/nixos-config/dotfiles/.config/nvim";
+
+  programs.waybar = {
+    enable = true;
+    settings = builtins.fromJSON (builtins.readFile ~/dotfiles/waybar/config.json);
+    style = builtins.readFile ~/dotfiles/waybar/style.css;
+};
 
 }
