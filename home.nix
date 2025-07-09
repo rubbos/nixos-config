@@ -19,7 +19,6 @@
         wget
         wofi
         waybar
-        hyprpaper
         font-awesome
         protonup
         librewolf
@@ -38,6 +37,11 @@
         pywal # color scheme from wallpaper
         bluez
         networkmanager
+        swaynotificationcenter
+        qogir-icon-theme
+        (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+        brightnessctl
+        wireplumber
     ];
     # Don't change this after the first build
     stateVersion = "24.11";
@@ -45,6 +49,14 @@
 
   # Hyprland config directory
   home.file.".config/hypr/hyprland.conf".source = ./dotfiles/hypr/hyprland.conf;
+  
+  gtk = {
+    enable = true;
+    iconTheme = {
+      name = "Qogir";
+      package = pkgs.qogir-icon-theme;
+    };
+  };
 
   home.file = {
   ".config/waybar/config".source = ./dotfiles/waybar/config;
