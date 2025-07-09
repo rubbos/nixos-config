@@ -37,12 +37,13 @@
         pywal # color scheme from wallpaper
         bluez
         networkmanager
-        swaynotificationcenter
-        qogir-icon-theme
+        swaynotificationcenter # Notifications on waybar
+        qogir-icon-theme # Icons
         (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
-        brightnessctl
-        wireplumber
-        pywalfox-native
+        brightnessctl # Brightness buttons
+        wireplumber # Music buttons
+        pywalfox-native #color scheme for firefox/librewolf
+        hyprshot # screenshot utility
     ];
     # Don't change this after the first build
     stateVersion = "24.11";
