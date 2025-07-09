@@ -42,6 +42,7 @@
         (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
         brightnessctl
         wireplumber
+        pywalfox-native
     ];
     # Don't change this after the first build
     stateVersion = "24.11";
@@ -72,6 +73,9 @@ programs.waybar.enable = true;
 programs.pywal = {
   enable = true;
 };
+programs.librewolf.nativeMessagingHosts = [ pkgs.pywalfox-native ];
+
+
 programs.git = {
       enable = true;
   };
