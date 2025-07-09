@@ -31,11 +31,11 @@
         zoxide
         syncthing
         ani-cli
-        obsidian
-        blueman
+        obsidian 
+        blueman # bluetooth
         swww
-        hyprpicker
-        pywal
+        hyprpicker # color picker
+        pywal # color scheme from wallpaper
         bluez
         networkmanager
     ];
@@ -46,24 +46,22 @@
   # Hyprland config directory
   home.file.".config/hypr/hyprland.conf".source = ./dotfiles/hypr/hyprland.conf;
 
-  home.file.".config/waybar/config".source = ./dotfiles/waybar/config;
-  home.file.".config/waybar/style.css".source = ./dotfiles/waybar/style.css;
+  home.file = {
+  ".config/waybar/config".source = ./dotfiles/waybar/config;
+  ".config/waybar/style.css".source = ./dotfiles/waybar/style.css;
+  ".config/waybar/scripts".source = ./dotfiles/waybar/scripts;
+  ".config/waybar/assets".source = ./dotfiles/waybar/assets;
+  ".config/waybar/themes".source = ./dotfiles/waybar/themes;
+  ".config/wal".source = ./dotfiles/wal;
+  ".config/hypr/wallpaper.sh".source = ./dotfiles/hypr/wallpaper.sh;
+  ".config/wofi".source = ./dotfiles/wofi;
 
-  home.directory.".config/waybar/scripts" = {
-    source = ./dotfiles/waybar/scripts;
-  };
-
-  home.directory.".config/waybar/assets" = {
-    source = ./dotfiles/waybar/assets;
-  };
-
-  home.directory.".config/waybar/themes" = {
-    source = ./dotfiles/waybar/themes;
-  };
-
-  programs.waybar.enable = true;
-
-  programs.git = {
+};
+programs.waybar.enable = true;  
+programs.pywal = {
+  enable = true;
+};
+programs.git = {
       enable = true;
   };
 
@@ -89,11 +87,5 @@
 
   home.file.".config/nvim".source = config.lib.file.mkOutOfStoreSymlink 
     "${config.home.homeDirectory}/nixos-config/dotfiles/.config/nvim";
-
-  programs.waybar = {
-    enable = true;
-    settings = builtins.fromJSON (builtins.readFile ~/dotfiles/waybar/config.json);
-    style = builtins.readFile ~/dotfiles/waybar/style.css;
-};
 
 }
