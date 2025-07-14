@@ -35,7 +35,6 @@
         swww
         hyprpicker # color picker
         pywal # color scheme from wallpaper
-        bluez
         networkmanager
         swaynotificationcenter # Notifications on waybar
         qogir-icon-theme # Icons
