@@ -60,12 +60,22 @@
   # Enable plasma6 and hyprland as default
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;  
-  programs.hyprland.enable = true; 
+  programs.hyprland.enable = true
+  # Optionally open CUPS web interface on localhost:631
 
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
+environment.etc."cups/filter/brother_lpdwrapper_BrGenML1".source = "/opt/brother/Printers/BrGenML1/cupswrapper/brother_lpdwrapper_BrGenML1";
 
-  # Enable bluetooth for hyprland
+services.printing = {
+  enable = true;
+  extraConf = ''
+    FilterPath /etc/cups/filter
+  '';
+};
+services.avahi.enable = true;
+
+  networking.firewall.allowedTCPPorts = [ 631 ];
+
+# Enable bluetooth for hyprland
   services.blueman.enable = true;
 
   # Enable sound with pipewire.
@@ -135,8 +145,14 @@
      blueman
      bluez
      bluez-tools
+     ghostscript
+     flatpak
+     lutris-free
   ];
-
+  
+  # Enable Flatpak support
+  services.flatpak.enable = true;
+}
   environment.sessionVariables = {
     STEAM_EXTRA_COMPAT_TOOLS_PATHS =
       "\${HOME}/.steam/root/compatibilitytools.d";

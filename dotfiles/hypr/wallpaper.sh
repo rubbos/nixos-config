@@ -10,7 +10,8 @@ main() {
     swww img "$selected_wallpaper" --transition-type any --transition-fps 60 --transition-duration .5
     wal -i "$selected_wallpaper" -n 
     swaync-client --reload-css
-    cat ~/.cache/wal/colors-kitty.conf > ~/.config/kitty/current-theme.conf
+    #cat ~/.cache/wal/colors-kitty.conf > ~/.config/kitty/current-theme.conf
+    ln -sf ~/.cache/wal/colors-kitty.conf ~/.config/kitty/current-theme.conf
     pywalfox update
     color1=$(awk 'match($0, /color2=\47(.*)\47/,a) { print a[1] }' ~/.cache/wal/colors.sh)
     color2=$(awk 'match($0, /color3=\47(.*)\47/,a) { print a[1] }' ~/.cache/wal/colors.sh)

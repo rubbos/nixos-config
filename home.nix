@@ -43,6 +43,8 @@
         wireplumber # Music buttons
         pywalfox-native #color scheme for firefox/librewolf
         hyprshot # screenshot utility
+        lutris
+        flatpak
     ];
     # Don't change this after the first build
     stateVersion = "24.11";
@@ -86,6 +88,16 @@ programs.git = {
       extraConfig = builtins.readFile ./dotfiles/wezterm.lua;
   };
 
+    home.file."kitty.conf".source = config.lib.file.mkOutOfStoreSymlink 
+    "${config.home.homeDirectory}/nixos-config/dotfiles/kitty/kitty.conf";
+
+      programs.kitty = {
+    enable = true;
+    extraConfig = ''
+      include ~/.config/kitty/current-theme.conf
+    '';
+  };
+
   home.file.".tmux.conf".source = config.lib.file.mkOutOfStoreSymlink 
     "${config.home.homeDirectory}/nixos-config/dotfiles/.tmux.conf";
 
@@ -102,5 +114,6 @@ programs.git = {
 
   home.file.".config/nvim".source = config.lib.file.mkOutOfStoreSymlink 
     "${config.home.homeDirectory}/nixos-config/dotfiles/.config/nvim";
+
 
 }
